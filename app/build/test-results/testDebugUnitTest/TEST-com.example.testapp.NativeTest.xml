@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.testapp.NativeTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-06-20T14:02:53" hostname="wangyajuns-MacBook-Pro.local" time="0.005">
+<testsuite name="com.example.testapp.NativeTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-06-20T14:14:51" hostname="wangyajuns-MacBook-Pro.local" time="0.009">
   <properties/>
-  <testcase name="testNativeProcess" classname="com.example.testapp.NativeTest" time="0.005">
+  <testcase name="testNativeProcess" classname="com.example.testapp.NativeTest" time="0.009">
     <failure message="java.lang.UnsatisfiedLinkError: no native-lib in java.library.path: /Users/wangyajun/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:." type="java.lang.UnsatisfiedLinkError">java.lang.UnsatisfiedLinkError: no native-lib in java.library.path: /Users/wangyajun/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
 	at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2444)
 	at java.base/java.lang.Runtime.loadLibrary0(Runtime.java:848)

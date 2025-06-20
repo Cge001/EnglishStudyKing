@@ -3,49 +3,49 @@
 3    package="com.example.testapp.test" >
 4
 5    <uses-sdk
-5-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest12494167731870817953.xml:5:5-74
+5-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest11741207133962370081.xml:5:5-74
 6        android:minSdkVersion="24"
-6-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest12494167731870817953.xml:5:15-41
+6-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest11741207133962370081.xml:5:15-41
 7        android:targetSdkVersion="34" />
-7-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest12494167731870817953.xml:5:42-71
+7-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest11741207133962370081.xml:5:42-71
 8
 9    <instrumentation
-9-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest12494167731870817953.xml:11:5-15:69
+9-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest11741207133962370081.xml:11:5-15:69
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest12494167731870817953.xml:11:22-76
+10-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest11741207133962370081.xml:11:22-76
 11        android:functionalTest="false"
-11-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest12494167731870817953.xml:14:22-52
+11-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest11741207133962370081.xml:14:22-52
 12        android:handleProfiling="false"
-12-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest12494167731870817953.xml:13:22-53
+12-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest11741207133962370081.xml:13:22-53
 13        android:label="Tests for com.example.testapp"
-13-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest12494167731870817953.xml:15:22-67
+13-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest11741207133962370081.xml:15:22-67
 14        android:targetPackage="com.example.testapp" />
-14-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest12494167731870817953.xml:12:22-65
+14-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest11741207133962370081.xml:12:22-65
 15
-16    <uses-permission android:name="android.permission.REORDER_TASKS" />
-16-->[androidx.test:core:1.5.0] /Users/wangyajun/.gradle/caches/transforms-3/57f572efb62ec23ba2989da9fc6f4d64/transformed/core-1.5.0/AndroidManifest.xml:24:5-72
-16-->[androidx.test:core:1.5.0] /Users/wangyajun/.gradle/caches/transforms-3/57f572efb62ec23ba2989da9fc6f4d64/transformed/core-1.5.0/AndroidManifest.xml:24:22-69
-17
-18    <queries>
-18-->[androidx.test:runner:1.5.2] /Users/wangyajun/.gradle/caches/transforms-3/6b692ad5786e5e1424ee6dd838c5211f/transformed/runner-1.5.2/AndroidManifest.xml:24:5-28:15
-19        <package android:name="androidx.test.orchestrator" />
-19-->[androidx.test:runner:1.5.2] /Users/wangyajun/.gradle/caches/transforms-3/6b692ad5786e5e1424ee6dd838c5211f/transformed/runner-1.5.2/AndroidManifest.xml:25:9-62
-19-->[androidx.test:runner:1.5.2] /Users/wangyajun/.gradle/caches/transforms-3/6b692ad5786e5e1424ee6dd838c5211f/transformed/runner-1.5.2/AndroidManifest.xml:25:18-59
-20        <package android:name="androidx.test.services" />
-20-->[androidx.test:runner:1.5.2] /Users/wangyajun/.gradle/caches/transforms-3/6b692ad5786e5e1424ee6dd838c5211f/transformed/runner-1.5.2/AndroidManifest.xml:26:9-58
-20-->[androidx.test:runner:1.5.2] /Users/wangyajun/.gradle/caches/transforms-3/6b692ad5786e5e1424ee6dd838c5211f/transformed/runner-1.5.2/AndroidManifest.xml:26:18-55
-21        <package android:name="com.google.android.apps.common.testing.services" />
-21-->[androidx.test:runner:1.5.2] /Users/wangyajun/.gradle/caches/transforms-3/6b692ad5786e5e1424ee6dd838c5211f/transformed/runner-1.5.2/AndroidManifest.xml:27:9-83
-21-->[androidx.test:runner:1.5.2] /Users/wangyajun/.gradle/caches/transforms-3/6b692ad5786e5e1424ee6dd838c5211f/transformed/runner-1.5.2/AndroidManifest.xml:27:18-80
-22    </queries>
+16    <queries>
+16-->[androidx.test:runner:1.5.2] /Users/wangyajun/.gradle/caches/transforms-3/6b692ad5786e5e1424ee6dd838c5211f/transformed/runner-1.5.2/AndroidManifest.xml:24:5-28:15
+17        <package android:name="androidx.test.orchestrator" />
+17-->[androidx.test:runner:1.5.2] /Users/wangyajun/.gradle/caches/transforms-3/6b692ad5786e5e1424ee6dd838c5211f/transformed/runner-1.5.2/AndroidManifest.xml:25:9-62
+17-->[androidx.test:runner:1.5.2] /Users/wangyajun/.gradle/caches/transforms-3/6b692ad5786e5e1424ee6dd838c5211f/transformed/runner-1.5.2/AndroidManifest.xml:25:18-59
+18        <package android:name="androidx.test.services" />
+18-->[androidx.test:runner:1.5.2] /Users/wangyajun/.gradle/caches/transforms-3/6b692ad5786e5e1424ee6dd838c5211f/transformed/runner-1.5.2/AndroidManifest.xml:26:9-58
+18-->[androidx.test:runner:1.5.2] /Users/wangyajun/.gradle/caches/transforms-3/6b692ad5786e5e1424ee6dd838c5211f/transformed/runner-1.5.2/AndroidManifest.xml:26:18-55
+19        <package android:name="com.google.android.apps.common.testing.services" />
+19-->[androidx.test:runner:1.5.2] /Users/wangyajun/.gradle/caches/transforms-3/6b692ad5786e5e1424ee6dd838c5211f/transformed/runner-1.5.2/AndroidManifest.xml:27:9-83
+19-->[androidx.test:runner:1.5.2] /Users/wangyajun/.gradle/caches/transforms-3/6b692ad5786e5e1424ee6dd838c5211f/transformed/runner-1.5.2/AndroidManifest.xml:27:18-80
+20    </queries>
+21
+22    <uses-permission android:name="android.permission.REORDER_TASKS" />
+22-->[androidx.test:core:1.5.0] /Users/wangyajun/.gradle/caches/transforms-3/57f572efb62ec23ba2989da9fc6f4d64/transformed/core-1.5.0/AndroidManifest.xml:24:5-72
+22-->[androidx.test:core:1.5.0] /Users/wangyajun/.gradle/caches/transforms-3/57f572efb62ec23ba2989da9fc6f4d64/transformed/core-1.5.0/AndroidManifest.xml:24:22-69
 23
 24    <application
-24-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest12494167731870817953.xml:7:5-9:19
+24-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest11741207133962370081.xml:7:5-9:19
 25        android:debuggable="true"
 26        android:extractNativeLibs="false" >
 27        <uses-library android:name="android.test.runner" />
-27-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest12494167731870817953.xml:8:9-60
-27-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest12494167731870817953.xml:8:23-57
+27-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest11741207133962370081.xml:8:9-60
+27-->/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest11741207133962370081.xml:8:23-57
 28
 29        <activity
 29-->[androidx.test:core:1.5.0] /Users/wangyajun/.gradle/caches/transforms-3/57f572efb62ec23ba2989da9fc6f4d64/transformed/core-1.5.0/AndroidManifest.xml:27:9-34:20

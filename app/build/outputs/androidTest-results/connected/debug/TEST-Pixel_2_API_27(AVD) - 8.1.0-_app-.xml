@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.example.testapp.MainActivityInstrumentedTest" tests="1" failures="0" errors="0" skipped="0" time="2.187" timestamp="2025-06-20T14:24:18" hostname="localhost">
+  <properties>
+    <property name="device" value="Pixel_2_API_27(AVD) - 8.1.0" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="testNativeButtonClick" classname="com.example.testapp.MainActivityInstrumentedTest" time="1.259" />
+</testsuite>

@@ -9,9 +9,14 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.hamcrest.Matchers.containsString
 
 @RunWith(AndroidJUnit4::class)
 class MainActivityInstrumentedTest {
+    companion object {
+        const val TAG = "MainActivityInstrumentedTest"
+    }
+
     @get:Rule
     val activityRule = ActivityTestRule(MainActivity::class.java)
 
