@@ -1,0 +1,17 @@
+/opt/homebrew/bin/cmake \
+  -H/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/src/main/cpp \
+  -DCMAKE_SYSTEM_NAME=Android \
+  -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+  -DCMAKE_SYSTEM_VERSION=24 \
+  -DANDROID_PLATFORM=android-24 \
+  -DANDROID_ABI=arm64-v8a \
+  -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a \
+  -DANDROID_NDK=/Users/wangyajun/Library/Android/sdk/ndk/25.1.8937393 \
+  -DCMAKE_ANDROID_NDK=/Users/wangyajun/Library/Android/sdk/ndk/25.1.8937393 \
+  -DCMAKE_TOOLCHAIN_FILE=/Users/wangyajun/Library/Android/sdk/ndk/25.1.8937393/build/cmake/android.toolchain.cmake \
+  -DCMAKE_MAKE_PROGRAM=/Users/wangyajun/Library/Android/sdk/cmake/3.18.1/bin/ninja \
+  -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/cxx/Debug/3q2v2z72/obj/arm64-v8a \
+  -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/cxx/Debug/3q2v2z72/obj/arm64-v8a \
+  -DCMAKE_BUILD_TYPE=Debug \
+  -B/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/.cxx/Debug/3q2v2z72/arm64-v8a \
+  -GNinja

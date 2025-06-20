@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "com.example.testapp-mergeReleaseResources-30:/layout/activity_main.xml",
+        "source": "com.example.testapp-main-32:/layout/activity_main.xml"
+    }
+]

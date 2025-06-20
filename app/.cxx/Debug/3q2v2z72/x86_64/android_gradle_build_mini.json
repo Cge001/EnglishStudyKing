@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/wangyajun/Library/Android/sdk/cmake/3.18.1/bin/ninja",
+      "-C",
+      "/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/.cxx/Debug/3q2v2z72/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/wangyajun/Library/Android/sdk/cmake/3.18.1/bin/ninja",
+    "-C",
+    "/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/.cxx/Debug/3q2v2z72/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "native-lib::@6890427a1f51a3e7e1df": {
+      "artifactName": "native-lib",
+      "abi": "x86_64",
+      "output": "/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/build/intermediates/cxx/Debug/3q2v2z72/obj/x86_64/libnative-lib.so",
+      "runtimeFiles": []
+    }
+  }
+}
