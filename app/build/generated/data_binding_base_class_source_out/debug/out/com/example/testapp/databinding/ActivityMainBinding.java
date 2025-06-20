@@ -4,6 +4,7 @@ package com.example.testapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,10 +24,16 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final MaterialButton btnWords;
+
+  @NonNull
   public final MaterialButton button;
 
   @NonNull
   public final TextInputEditText editText;
+
+  @NonNull
+  public final ScrollView resultScrollView;
 
   @NonNull
   public final TextView resultTextView;
@@ -34,12 +41,15 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final TextInputLayout textInputLayout;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull MaterialButton button,
-      @NonNull TextInputEditText editText, @NonNull TextView resultTextView,
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull MaterialButton btnWords,
+      @NonNull MaterialButton button, @NonNull TextInputEditText editText,
+      @NonNull ScrollView resultScrollView, @NonNull TextView resultTextView,
       @NonNull TextInputLayout textInputLayout) {
     this.rootView = rootView;
+    this.btnWords = btnWords;
     this.button = button;
     this.editText = editText;
+    this.resultScrollView = resultScrollView;
     this.resultTextView = resultTextView;
     this.textInputLayout = textInputLayout;
   }
@@ -71,6 +81,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnWords;
+      MaterialButton btnWords = ViewBindings.findChildViewById(rootView, id);
+      if (btnWords == null) {
+        break missingId;
+      }
+
       id = R.id.button;
       MaterialButton button = ViewBindings.findChildViewById(rootView, id);
       if (button == null) {
@@ -80,6 +96,12 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.editText;
       TextInputEditText editText = ViewBindings.findChildViewById(rootView, id);
       if (editText == null) {
+        break missingId;
+      }
+
+      id = R.id.resultScrollView;
+      ScrollView resultScrollView = ViewBindings.findChildViewById(rootView, id);
+      if (resultScrollView == null) {
         break missingId;
       }
 
@@ -95,8 +117,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, button, editText, resultTextView,
-          textInputLayout);
+      return new ActivityMainBinding((ConstraintLayout) rootView, btnWords, button, editText,
+          resultScrollView, resultTextView, textInputLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -9,8 +9,10 @@ color teal_700
 color white
 drawable ic_launcher
 drawable result_background
+id btnWords
 id button
 id editText
+id resultScrollView
 id resultTextView
 id textInputLayout
 layout activity_main

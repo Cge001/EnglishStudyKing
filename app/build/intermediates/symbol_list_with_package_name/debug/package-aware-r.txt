@@ -3181,6 +3181,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnWords
 id button
 id buttonPanel
 id cache_measures
@@ -3444,6 +3445,7 @@ id radio
 id ratio
 id rectangles
 id report_drawn
+id resultScrollView
 id resultTextView
 id reverseSawtooth
 id right

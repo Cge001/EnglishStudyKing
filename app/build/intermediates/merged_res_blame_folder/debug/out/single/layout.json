@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/wangyajun/.gradle/daemon/8.2/com.example.testapp-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "/Users/wangyajun/.gradle/daemon/8.2/com.example.testapp-main-33:/layout/activity_main.xml"
+    },
+    {
         "merged": "com.example.testapp-mergeDebugResources-30:/layout/activity_main.xml",
         "source": "com.example.testapp-main-33:/layout/activity_main.xml"
     }

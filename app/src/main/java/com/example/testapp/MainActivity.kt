@@ -19,6 +19,23 @@ class MainActivity : AppCompatActivity() {
     // 声明native方法
     external fun processTextFromNative(input: String): String
     
+    private val WORD_LIST = listOf(
+        "apple", "banana", "orange", "grape", "peach", "pear", "plum", "melon", "kiwi", "lemon",
+        "cat", "dog", "fish", "bird", "horse", "sheep", "tiger", "lion", "bear", "wolf",
+        "table", "chair", "desk", "sofa", "bed", "lamp", "door", "window", "floor", "ceiling",
+        "computer", "phone", "mouse", "keyboard", "screen", "printer", "camera", "speaker", "router", "cable",
+        "book", "pen", "pencil", "paper", "notebook", "bag", "clock", "watch", "calendar", "map",
+        "river", "mountain", "forest", "ocean", "lake", "island", "valley", "desert", "beach", "hill",
+        "happy", "sad", "angry", "excited", "bored", "tired", "scared", "brave", "calm", "proud",
+        "run", "walk", "jump", "swim", "fly", "drive", "ride", "climb", "crawl", "dance",
+        "red", "blue", "green", "yellow", "black", "white", "purple", "brown", "pink", "gray",
+        "spring", "summer", "autumn", "winter", "rain", "snow", "wind", "cloud", "sun", "moon"
+    )
+
+    private fun getRandomWords(n: Int = 20): List<String> {
+        return WORD_LIST.shuffled().take(n)
+    }
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -43,6 +60,16 @@ class MainActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 binding.resultTextView.text = "Native接口调用失败: ${e.message}"
             }
+        }
+        binding.btnWords.setOnClickListener {
+            val words = getRandomWords(20)
+            val result = buildString {
+                append("请背诵以下单词：\n")
+                words.forEachIndexed { i, word ->
+                    append("${i + 1}. $word\n")
+                }
+            }
+            binding.resultTextView.text = result
         }
     }
 } 
