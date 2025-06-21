@@ -181,8 +181,8 @@ class MainActivity : AppCompatActivity() {
         val header = "请背诵以下单词：\n\n"
         val fullText = StringBuilder(header)
         
-        // 计算每行的最大长度，用于右对齐
-        val maxLineLength = 50 // 设置一个合理的最大行长度
+        // 使用更大的最大行长度，让按钮真正靠到屏幕最右边
+        val maxLineLength = 80 // 增加到80，确保按钮靠到最右边
         
         currentWords.forEachIndexed { index, word ->
             val wordText = "${index + 1}. ${word.word}"
@@ -194,7 +194,7 @@ class MainActivity : AppCompatActivity() {
             val currentLineLength = wordText.length + translation.length
             val remainingSpace = maxLineLength - currentLineLength - btnText.length
             
-            // 生成填充空格
+            // 生成填充空格，确保按钮靠到最右边
             val padding = if (remainingSpace > 0) " ".repeat(remainingSpace) else "  "
             
             val line = "$wordText$translation$padding$btnText\n\n"
