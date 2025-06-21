@@ -1,9 +1,11 @@
 package com.example.testapp
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.testapp.databinding.ActivityNativeInterfaceBinding
@@ -40,6 +42,9 @@ class NativeInterfaceActivity : AppCompatActivity() {
     
     private fun setupButtons() {
         binding.button.setOnClickListener {
+            // 隐藏软键盘
+            hideSoftKeyboard()
+            
             val input = binding.editText.text.toString()
             if (input.isNotEmpty()) {
                 showLoading(true)
@@ -54,6 +59,14 @@ class NativeInterfaceActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "请输入文字", Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+    
+    private fun hideSoftKeyboard() {
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val currentFocus = currentFocus
+        if (currentFocus != null) {
+            imm.hideSoftInputFromWindow(currentFocus.windowToken, 0)
         }
     }
     
