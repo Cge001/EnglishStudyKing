@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity() {
         init {
             System.loadLibrary("native-lib")
         }
+        @JvmStatic
+        external fun stringFromJNI(input: String): String
     }
     
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -123,6 +125,4 @@ class MainActivity : AppCompatActivity() {
         }
         wordAdapter.notifyDataSetChanged()
     }
-    
-    external fun stringFromJNI(input: String): String
 } 

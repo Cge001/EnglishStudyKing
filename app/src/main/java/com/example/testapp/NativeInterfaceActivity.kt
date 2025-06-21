@@ -69,11 +69,9 @@ class NativeInterfaceActivity : AppCompatActivity() {
     
     private fun callNativeInterface(input: String): String {
         return try {
-            stringFromJNI(input)
+            MainActivity.stringFromJNI(input)
         } catch (e: Exception) {
             "Native接口调用失败: ${e.message}"
         }
     }
-    
-    external fun stringFromJNI(input: String): String
 } 

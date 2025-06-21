@@ -199,3 +199,35 @@ Java_com_example_testapp_MainActivity_processTextFromNative(
         return env->NewStringUTF("错误: Native处理过程中发生未知错误");
     }
 }
+
+// JNI接口 - stringFromJNI
+extern "C" JNIEXPORT jstring JNICALL
+Java_com_example_testapp_MainActivity_stringFromJNI(
+        JNIEnv* env,
+        jclass /* clazz */,
+        jstring input) {
+    
+    if (input == nullptr) {
+        return env->NewStringUTF("错误: 输入字符串为空");
+    }
+    
+    // 使用更安全的字符串转换
+    const char* inputStr = env->GetStringUTFChars(input, nullptr);
+    if (inputStr == nullptr) {
+        return env->NewStringUTF("错误: 无法读取输入字符串");
+    }
+    
+    try {
+        std::string cppInput(inputStr);
+        env->ReleaseStringUTFChars(input, inputStr);
+        
+        std::string result = processText(cppInput);
+        return env->NewStringUTF(result.c_str());
+    } catch (const std::exception& e) {
+        env->ReleaseStringUTFChars(input, inputStr);
+        return env->NewStringUTF("错误: Native处理过程中发生异常");
+    } catch (...) {
+        env->ReleaseStringUTFChars(input, inputStr);
+        return env->NewStringUTF("错误: Native处理过程中发生未知错误");
+    }
+}
