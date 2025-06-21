@@ -16,8 +16,7 @@ class WordAdapter(
 
     inner class WordViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvNumber: TextView = itemView.findViewById(R.id.tvNumber)
-        val tvWord: TextView = itemView.findViewById(R.id.tvWord)
-        val tvTranslation: TextView = itemView.findViewById(R.id.tvTranslation)
+        val tvWordWithTranslation: TextView = itemView.findViewById(R.id.tvWordWithTranslation)
         val btnToggle: MaterialButton = itemView.findViewById(R.id.btnToggle)
     }
 
@@ -32,14 +31,12 @@ class WordAdapter(
         val isVisible = visibilityMap[position] ?: false
 
         holder.tvNumber.text = "${position + 1}."
-        holder.tvWord.text = word.word
-        holder.tvTranslation.text = word.meaning
-
+        
         if (isVisible) {
-            holder.tvTranslation.visibility = View.VISIBLE
+            holder.tvWordWithTranslation.text = "${word.word} - ${word.meaning}"
             holder.btnToggle.text = "隐藏"
         } else {
-            holder.tvTranslation.visibility = View.GONE
+            holder.tvWordWithTranslation.text = word.word
             holder.btnToggle.text = "显示"
         }
 
