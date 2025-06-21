@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages 测试页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .success {
+            background: rgba(76, 175, 80, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .info {
+            background: rgba(33, 150, 243, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        a:hover {
+            border-bottom-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 GitHub Pages 测试成功！</h1>
+        
+        <div class="success">
+            <h2>✅ 部署状态</h2>
+            <p>如果你能看到这个页面，说明 GitHub Pages 已经正常工作了！</p>
+        </div>
+        
+        <div class="info">
+            <h2>📋 当前时间</h2>
+            <p id="current-time"></p>
+        </div>
+        
+        <div class="info">
+            <h2>🔗 相关链接</h2>
+            <p><a href="app_intro.html">应用介绍页面</a></p>
+            <p><a href="index.html">主页</a></p>
+            <p><a href="TestApp-debug.apk">下载 APK</a></p>
+        </div>
+        
+        <div class="info">
+            <h2>📱 二维码</h2>
+            <p><a href="english_study_king_public_qr.png">查看公网二维码</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // 显示当前时间
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('current-time').textContent = now.toLocaleString('zh-CN');
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html> 
