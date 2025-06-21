@@ -1,4 +1,4 @@
-# TestApp
+# EnglishStudyKing
 
 一个原生 Android 应用，使用 Kotlin 和 C++ 实现。
 
@@ -10,6 +10,7 @@
   - 字符统计（总字符数、字母数、数字数、空格数）
   - 文本转换（大写、小写、反转）
   - 处理时间戳
+- 单词记忆功能，支持显示/隐藏翻译
 
 ## 技术栈
 
@@ -33,13 +34,15 @@ TestApp/
 ├── app/
 │   ├── src/main/
 │   │   ├── java/com/example/testapp/
-│   │   │   └── MainActivity.kt          # 主活动
+│   │   │   ├── MainActivity.kt          # 主活动
+│   │   │   └── WordAdapter.kt           # 单词适配器
 │   │   ├── cpp/
 │   │   │   ├── native-lib.cpp          # C++ 实现
 │   │   │   └── CMakeLists.txt          # CMake 配置
 │   │   ├── res/
 │   │   │   ├── layout/
-│   │   │   │   └── activity_main.xml   # 主布局
+│   │   │   │   ├── activity_main.xml   # 主布局
+│   │   │   │   └── item_word.xml       # 单词项布局
 │   │   │   ├── values/
 │   │   │   │   ├── strings.xml         # 字符串资源
 │   │   │   │   ├── colors.xml          # 颜色资源
@@ -67,4 +70,9 @@ external fun processTextFromNative(input: String): String
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_example_testapp_MainActivity_processTextFromNative(
     JNIEnv* env, jobject /* this */, jstring input)
-``` 
+```
+
+## 部署
+
+- GitHub Pages: https://cge001.github.io/EnglishStudyKing/app_intro.html
+- 二维码: english_study_king_public_qr.png
