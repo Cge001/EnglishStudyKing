@@ -4,11 +4,10 @@ package com.example.testapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ScrollView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.testapp.R;
@@ -33,25 +32,20 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextInputEditText editText;
 
   @NonNull
-  public final ScrollView resultScrollView;
-
-  @NonNull
-  public final TextView resultTextView;
-
-  @NonNull
   public final TextInputLayout textInputLayout;
+
+  @NonNull
+  public final RecyclerView wordRecyclerView;
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull MaterialButton btnWords,
       @NonNull MaterialButton button, @NonNull TextInputEditText editText,
-      @NonNull ScrollView resultScrollView, @NonNull TextView resultTextView,
-      @NonNull TextInputLayout textInputLayout) {
+      @NonNull TextInputLayout textInputLayout, @NonNull RecyclerView wordRecyclerView) {
     this.rootView = rootView;
     this.btnWords = btnWords;
     this.button = button;
     this.editText = editText;
-    this.resultScrollView = resultScrollView;
-    this.resultTextView = resultTextView;
     this.textInputLayout = textInputLayout;
+    this.wordRecyclerView = wordRecyclerView;
   }
 
   @Override
@@ -99,26 +93,20 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.resultScrollView;
-      ScrollView resultScrollView = ViewBindings.findChildViewById(rootView, id);
-      if (resultScrollView == null) {
-        break missingId;
-      }
-
-      id = R.id.resultTextView;
-      TextView resultTextView = ViewBindings.findChildViewById(rootView, id);
-      if (resultTextView == null) {
-        break missingId;
-      }
-
       id = R.id.textInputLayout;
       TextInputLayout textInputLayout = ViewBindings.findChildViewById(rootView, id);
       if (textInputLayout == null) {
         break missingId;
       }
 
+      id = R.id.wordRecyclerView;
+      RecyclerView wordRecyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (wordRecyclerView == null) {
+        break missingId;
+      }
+
       return new ActivityMainBinding((ConstraintLayout) rootView, btnWords, button, editText,
-          resultScrollView, resultTextView, textInputLayout);
+          textInputLayout, wordRecyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

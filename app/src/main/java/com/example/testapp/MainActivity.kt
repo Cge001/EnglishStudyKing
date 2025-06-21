@@ -1,16 +1,9 @@
 package com.example.testapp
 
-import android.graphics.Color
 import android.os.Bundle
-import android.text.SpannableString
-import android.text.Spanned
-import android.text.method.LinkMovementMethod
-import android.text.style.ClickableSpan
-import android.text.style.ForegroundColorSpan
-import android.text.style.StyleSpan
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.testapp.databinding.ActivityMainBinding
 
 // 单词数据类
@@ -22,8 +15,7 @@ data class Word(
 class MainActivity : AppCompatActivity() {
     
     private lateinit var binding: ActivityMainBinding
-    private var currentWords: List<Word> = emptyList()
-    private val wordVisibilityMap = mutableMapOf<Int, Boolean>()
+    private lateinit var wordAdapter: WordAdapter
     
     // 加载native库
     companion object {
@@ -151,6 +143,9 @@ class MainActivity : AppCompatActivity() {
     }
     
     private fun setupUI() {
+        // 设置RecyclerView
+        binding.wordRecyclerView.layoutManager = LinearLayoutManager(this)
+        
         binding.button.setOnClickListener {
             val inputText = binding.editText.text.toString()
             
@@ -162,93 +157,18 @@ class MainActivity : AppCompatActivity() {
             try {
                 // 调用native接口处理文字
                 val result = processTextFromNative(inputText)
-                binding.resultTextView.text = result
+                Toast.makeText(this, result, Toast.LENGTH_LONG).show()
             } catch (e: Exception) {
-                binding.resultTextView.text = "Native接口调用失败: ${e.message}"
+                Toast.makeText(this, "Native接口调用失败: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
+        
         binding.btnWords.setOnClickListener {
-            currentWords = getRandomWords(20)
-            wordVisibilityMap.clear()
-            displayWords()
+            val words = getRandomWords(20)
+            wordAdapter = WordAdapter(words) { position ->
+                wordAdapter.toggleVisibility(position)
+            }
+            binding.wordRecyclerView.adapter = wordAdapter
         }
-        
-        // 设置TextView可点击
-        binding.resultTextView.movementMethod = LinkMovementMethod.getInstance()
-    }
-    
-    private fun displayWords() {
-        val header = "请背诵以下单词：\n\n"
-        val fullText = StringBuilder(header)
-        
-        // 使用更大的最大行长度，确保按钮真正靠右对齐
-        val maxLineLength = 100 // 增加到100，确保按钮完全靠右
-        
-        currentWords.forEachIndexed { index, word ->
-            val wordText = "${index + 1}. ${word.word}"
-            val isVisible = wordVisibilityMap[index] ?: false
-            val translation = if (isVisible) " - ${word.meaning}" else ""
-            val btnText = if (isVisible) "[隐藏]" else "[显示]"
-            
-            // 计算当前行的实际长度
-            val currentLineLength = wordText.length + translation.length
-            val remainingSpace = maxLineLength - currentLineLength - btnText.length
-            
-            // 生成填充空格，确保按钮完全靠右
-            val padding = if (remainingSpace > 0) " ".repeat(remainingSpace) else " "
-            
-            val line = "$wordText$translation$padding$btnText\n\n"
-            fullText.append(line)
-        }
-        
-        val spannableString = SpannableString(fullText.toString())
-        
-        // 单词粗体
-        var pos = header.length
-        currentWords.forEachIndexed { index, word ->
-            val wordText = "${index + 1}. ${word.word}"
-            spannableString.setSpan(
-                StyleSpan(android.graphics.Typeface.BOLD),
-                pos,
-                pos + wordText.length,
-                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-            )
-            pos += wordText.length
-            val isVisible = wordVisibilityMap[index] ?: false
-            val translation = if (isVisible) " - ${word.meaning}" else ""
-            pos += translation.length
-            
-            // 跳过填充空格
-            val currentLineLength = wordText.length + translation.length
-            val btnText = if (isVisible) "[隐藏]" else "[显示]"
-            val remainingSpace = maxLineLength - currentLineLength - btnText.length
-            pos += if (remainingSpace > 0) remainingSpace else 1
-            
-            // 按钮span
-            spannableString.setSpan(
-                object : ClickableSpan() {
-                    override fun onClick(widget: View) {
-                        toggleWordVisibility(index)
-                    }
-                },
-                pos,
-                pos + btnText.length,
-                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-            )
-            // 按钮黑色
-            spannableString.setSpan(
-                ForegroundColorSpan(Color.BLACK),
-                pos,
-                pos + btnText.length,
-                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-            )
-            pos += btnText.length + 2 // 跳过\n\n
-        }
-        binding.resultTextView.text = spannableString
-    }
-    
-    private fun toggleWordVisibility(index: Int) {
-        wordVisibilityMap[index] = !(wordVisibilityMap[index] ?: false)
-        displayWords()
     }
 } 

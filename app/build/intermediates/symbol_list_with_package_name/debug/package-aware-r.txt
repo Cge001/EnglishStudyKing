@@ -3181,6 +3181,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnToggle
 id btnWords
 id button
 id buttonPanel
@@ -3445,8 +3446,6 @@ id radio
 id ratio
 id rectangles
 id report_drawn
-id resultScrollView
-id resultTextView
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3562,6 +3561,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvNumber
+id tvTranslation
+id tvWord
 id unchecked
 id uniform
 id unlabeled
@@ -3580,6 +3582,7 @@ id west
 id withText
 id with_icon
 id withinBounds
+id wordRecyclerView
 id wrap
 id wrap_content
 id wrap_content_constrained
@@ -3718,6 +3721,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_word
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

@@ -44,6 +44,10 @@
         "source": "/Users/wangyajun/.gradle/daemon/8.2/com.example.testapp-main-33:/mipmap-xxxhdpi/ic_launcher.xml"
     },
     {
+        "merged": "com.example.testapp-merged_res-31:/layout_item_word.xml.flat",
+        "source": "com.example.testapp-main-33:/layout/item_word.xml"
+    },
+    {
         "merged": "/Users/wangyajun/.gradle/daemon/8.2/com.example.testapp-merged_res-31:/mipmap-xxhdpi_ic_launcher.xml.flat",
         "source": "/Users/wangyajun/.gradle/daemon/8.2/com.example.testapp-main-33:/mipmap-xxhdpi/ic_launcher.xml"
     },
