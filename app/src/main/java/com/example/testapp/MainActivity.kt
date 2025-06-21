@@ -181,8 +181,8 @@ class MainActivity : AppCompatActivity() {
         val header = "请背诵以下单词：\n\n"
         val fullText = StringBuilder(header)
         
-        // 使用更大的最大行长度，让按钮真正靠到屏幕最右边
-        val maxLineLength = 80 // 增加到80，确保按钮靠到最右边
+        // 使用更合理的最大行长度，确保按钮不会换行
+        val maxLineLength = 60 // 调整为60，确保按钮在同一行
         
         currentWords.forEachIndexed { index, word ->
             val wordText = "${index + 1}. ${word.word}"
@@ -194,8 +194,8 @@ class MainActivity : AppCompatActivity() {
             val currentLineLength = wordText.length + translation.length
             val remainingSpace = maxLineLength - currentLineLength - btnText.length
             
-            // 生成填充空格，确保按钮靠到最右边
-            val padding = if (remainingSpace > 0) " ".repeat(remainingSpace) else "  "
+            // 生成填充空格，确保按钮在同一行
+            val padding = if (remainingSpace > 0) " ".repeat(remainingSpace) else " "
             
             val line = "$wordText$translation$padding$btnText\n\n"
             fullText.append(line)
@@ -222,7 +222,7 @@ class MainActivity : AppCompatActivity() {
             val currentLineLength = wordText.length + translation.length
             val btnText = if (isVisible) "[隐藏]" else "[显示]"
             val remainingSpace = maxLineLength - currentLineLength - btnText.length
-            pos += if (remainingSpace > 0) remainingSpace else 2
+            pos += if (remainingSpace > 0) remainingSpace else 1
             
             // 按钮span
             spannableString.setSpan(
