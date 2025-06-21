@@ -1,0 +1,50 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+  <group android:scaleX="0.6"
+      android:scaleY="0.6"
+      android:translateX="21.6"
+      android:translateY="21.6">
+    <!-- 书本背景 -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M20,10L20,80C20,82.2 21.8,84 24,84L76,84C78.2,84 80,82.2 80,80L80,10C80,7.8 78.2,6 76,6L24,6C21.8,6 20,7.8 20,10Z"/>
+    
+    <!-- 书本内页 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,12L76,12C77.1,12 78,12.9 78,14L78,76C78,77.1 77.1,78 76,78L24,78C22.9,78 22,77.1 22,76L22,14C22,12.9 22.9,12 24,12Z"/>
+    
+    <!-- 书本线条 -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M30,20L70,20M30,30L70,30M30,40L60,40M30,50L65,50M30,60L70,60"/>
+    
+    <!-- 大脑图标 -->
+    <path
+        android:fillColor="#FF9800"
+        android:pathData="M45,35C45,35 47,33 50,33C53,33 55,35 55,35C55,35 56,37 56,40C56,43 55,45 55,45C55,45 53,47 50,47C47,47 45,45 45,45C45,45 44,43 44,40C44,37 45,35 45,35Z"/>
+    
+    <!-- 大脑纹理 -->
+    <path
+        android:fillColor="#F57C00"
+        android:pathData="M47,37C47,37 48,36 50,36C52,36 53,37 53,37M47,39C47,39 48,38 50,38C52,38 53,39 53,39M47,41C47,41 48,40 50,40C52,40 53,41 53,41M47,43C47,43 48,42 50,42C52,42 53,43 53,43"/>
+    
+    <!-- 灯泡图标 -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M50,25C50,25 52,23 54,23C56,23 58,25 58,25C58,25 59,27 59,30C59,33 58,35 58,35C58,35 56,37 54,37C52,37 50,35 50,35C50,35 49,33 49,30C49,27 50,25 50,25Z"/>
+    
+    <!-- 灯泡底部 -->
+    <path
+        android:fillColor="#FFA000"
+        android:pathData="M52,37L52,40L56,40L56,37Z"/>
+    
+    <!-- 灯泡高光 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M52,26C52,26 53,25 54,25C55,25 56,26 56,26"/>
+  </group>
+</vector> 

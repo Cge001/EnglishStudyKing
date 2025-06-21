@@ -30,7 +30,7 @@ class WordAdapter(
         val word = words[position]
         val isVisible = visibilityMap[position] ?: false
 
-        holder.tvNumber.text = "${position + 1}."
+        holder.tvNumber.text = "${word.number}."
         
         if (isVisible) {
             holder.tvWordWithTranslation.text = "${word.word} - ${word.meaning}"
