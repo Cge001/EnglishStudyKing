@@ -180,22 +180,29 @@ class MainActivity : AppCompatActivity() {
     private fun displayWords() {
         val header = "请背诵以下单词：\n\n"
         val fullText = StringBuilder(header)
-        val lineInfoList = mutableListOf<Triple<Int, Int, Int>>() // start, end, index
+        
+        // 计算每行的最大长度，用于右对齐
+        val maxLineLength = 50 // 设置一个合理的最大行长度
+        
         currentWords.forEachIndexed { index, word ->
             val wordText = "${index + 1}. ${word.word}"
             val isVisible = wordVisibilityMap[index] ?: false
             val translation = if (isVisible) " - ${word.meaning}" else ""
             val btnText = if (isVisible) "[隐藏]" else "[显示]"
-            // 用空格将按钮推到右侧（简单做法，适配大部分屏幕）
-            val pad = 20 - wordText.length - translation.length // 20可调
-            val spaces = if (pad > 0) " ".repeat(pad) else "  "
-            val line = "$wordText$translation$spaces$btnText\n\n"
-            val start = fullText.length + wordText.length + translation.length + spaces.length
-            val end = start + btnText.length
+            
+            // 计算当前行的实际长度
+            val currentLineLength = wordText.length + translation.length
+            val remainingSpace = maxLineLength - currentLineLength - btnText.length
+            
+            // 生成填充空格
+            val padding = if (remainingSpace > 0) " ".repeat(remainingSpace) else "  "
+            
+            val line = "$wordText$translation$padding$btnText\n\n"
             fullText.append(line)
-            lineInfoList.add(Triple(start, end, index))
         }
+        
         val spannableString = SpannableString(fullText.toString())
+        
         // 单词粗体
         var pos = header.length
         currentWords.forEachIndexed { index, word ->
@@ -210,11 +217,14 @@ class MainActivity : AppCompatActivity() {
             val isVisible = wordVisibilityMap[index] ?: false
             val translation = if (isVisible) " - ${word.meaning}" else ""
             pos += translation.length
-            // 跳过空格
-            val pad = 20 - wordText.length - translation.length
-            pos += if (pad > 0) pad else 2
-            // 按钮span
+            
+            // 跳过填充空格
+            val currentLineLength = wordText.length + translation.length
             val btnText = if (isVisible) "[隐藏]" else "[显示]"
+            val remainingSpace = maxLineLength - currentLineLength - btnText.length
+            pos += if (remainingSpace > 0) remainingSpace else 2
+            
+            // 按钮span
             spannableString.setSpan(
                 object : ClickableSpan() {
                     override fun onClick(widget: View) {
