@@ -157,9 +157,17 @@ class MainActivity : AppCompatActivity() {
             try {
                 // 调用native接口处理文字
                 val result = processTextFromNative(inputText)
-                Toast.makeText(this, result, Toast.LENGTH_LONG).show()
+                // 显示结果在TextView中
+                binding.resultTextView.text = result
+                binding.resultScrollView.visibility = android.view.View.VISIBLE
+                // 滚动到顶部
+                binding.resultScrollView.post {
+                    binding.resultScrollView.fullScroll(android.view.View.FOCUS_UP)
+                }
             } catch (e: Exception) {
-                Toast.makeText(this, "Native接口调用失败: ${e.message}", Toast.LENGTH_SHORT).show()
+                val errorMsg = "Native接口调用失败: ${e.message}"
+                binding.resultTextView.text = errorMsg
+                binding.resultScrollView.visibility = android.view.View.VISIBLE
             }
         }
         
@@ -169,6 +177,8 @@ class MainActivity : AppCompatActivity() {
                 wordAdapter.toggleVisibility(position)
             }
             binding.wordRecyclerView.adapter = wordAdapter
+            // 隐藏结果显示区域
+            binding.resultScrollView.visibility = android.view.View.GONE
         }
     }
 } 
