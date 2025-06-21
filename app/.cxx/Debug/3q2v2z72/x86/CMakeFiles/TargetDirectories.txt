@@ -1,3 +1,0 @@
-/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/.cxx/Debug/3q2v2z72/x86/CMakeFiles/native-lib.dir
-/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/.cxx/Debug/3q2v2z72/x86/CMakeFiles/edit_cache.dir
-/Users/wangyajun/workspace/05_Dev/01_cursor/TestApp/app/.cxx/Debug/3q2v2z72/x86/CMakeFiles/rebuild_cache.dir
