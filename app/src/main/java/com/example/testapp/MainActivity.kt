@@ -1,6 +1,14 @@
 package com.example.testapp
 
+import android.graphics.Color
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.testapp.databinding.ActivityMainBinding
@@ -14,6 +22,8 @@ data class Word(
 class MainActivity : AppCompatActivity() {
     
     private lateinit var binding: ActivityMainBinding
+    private var currentWords: List<Word> = emptyList()
+    private val wordVisibilityMap = mutableMapOf<Int, Boolean>()
     
     // 加载native库
     companion object {
@@ -158,14 +168,77 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.btnWords.setOnClickListener {
-            val words = getRandomWords(20)
-            val result = buildString {
-                append("请背诵以下单词：\n\n")
-                words.forEachIndexed { i, word ->
-                    append("${i + 1}. ${word.word} - ${word.meaning}\n")
-                }
-            }
-            binding.resultTextView.text = result
+            currentWords = getRandomWords(20)
+            wordVisibilityMap.clear()
+            displayWords()
         }
+        
+        // 设置TextView可点击
+        binding.resultTextView.movementMethod = LinkMovementMethod.getInstance()
+    }
+    
+    private fun displayWords() {
+        val header = "请背诵以下单词：\n\n"
+        val fullText = StringBuilder(header)
+        val lineInfoList = mutableListOf<Triple<Int, Int, Int>>() // start, end, index
+        currentWords.forEachIndexed { index, word ->
+            val wordText = "${index + 1}. ${word.word}"
+            val isVisible = wordVisibilityMap[index] ?: false
+            val translation = if (isVisible) " - ${word.meaning}" else ""
+            val btnText = if (isVisible) "[隐藏]" else "[显示]"
+            // 用空格将按钮推到右侧（简单做法，适配大部分屏幕）
+            val pad = 20 - wordText.length - translation.length // 20可调
+            val spaces = if (pad > 0) " ".repeat(pad) else "  "
+            val line = "$wordText$translation$spaces$btnText\n\n"
+            val start = fullText.length + wordText.length + translation.length + spaces.length
+            val end = start + btnText.length
+            fullText.append(line)
+            lineInfoList.add(Triple(start, end, index))
+        }
+        val spannableString = SpannableString(fullText.toString())
+        // 单词粗体
+        var pos = header.length
+        currentWords.forEachIndexed { index, word ->
+            val wordText = "${index + 1}. ${word.word}"
+            spannableString.setSpan(
+                StyleSpan(android.graphics.Typeface.BOLD),
+                pos,
+                pos + wordText.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            pos += wordText.length
+            val isVisible = wordVisibilityMap[index] ?: false
+            val translation = if (isVisible) " - ${word.meaning}" else ""
+            pos += translation.length
+            // 跳过空格
+            val pad = 20 - wordText.length - translation.length
+            pos += if (pad > 0) pad else 2
+            // 按钮span
+            val btnText = if (isVisible) "[隐藏]" else "[显示]"
+            spannableString.setSpan(
+                object : ClickableSpan() {
+                    override fun onClick(widget: View) {
+                        toggleWordVisibility(index)
+                    }
+                },
+                pos,
+                pos + btnText.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            // 按钮黑色
+            spannableString.setSpan(
+                ForegroundColorSpan(Color.BLACK),
+                pos,
+                pos + btnText.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            pos += btnText.length + 2 // 跳过\n\n
+        }
+        binding.resultTextView.text = spannableString
+    }
+    
+    private fun toggleWordVisibility(index: Int) {
+        wordVisibilityMap[index] = !(wordVisibilityMap[index] ?: false)
+        displayWords()
     }
 } 

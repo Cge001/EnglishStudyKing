@@ -68,7 +68,9 @@
                 android:background="@drawable/result_background"
                 android:padding="16dp"
                 android:text="输出结果将显示在这里"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:lineSpacingExtra="8dp"
+                android:lineSpacingMultiplier="1.2" />
         </LinearLayout>
     </ScrollView>
 
