@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TestApp 版本管理脚本
+EnglishStudyKing 版本管理脚本
 自动递增版本号并更新相关文件
 """
 
@@ -177,7 +177,7 @@ def main():
     manager = VersionManager()
     
     if len(sys.argv) < 2:
-        print("🚀 TestApp 版本管理器")
+        print("🚀 EnglishStudyKing 版本管理器")
         print("=" * 50)
         print("使用方法:")
         print("  python3 version_manager.py show          # 显示当前版本")
