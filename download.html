@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnglishStudyKing - 下载页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .download-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: #667eea;
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+        
+        .version {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .download-options {
+            margin: 30px 0;
+        }
+        
+        .download-btn {
+            display: block;
+            width: 100%;
+            background: #667eea;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .download-btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .download-btn.secondary {
+            background: #f8f9fa;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .download-btn.secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .info h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .info ul {
+            padding-left: 20px;
+        }
+        
+        .info li {
+            margin: 8px 0;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .qr-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            background: #ddd;
+            margin: 0 auto 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="download-card">
+            <div class="app-icon">📚</div>
+            <h1>EnglishStudyKing</h1>
+            <p class="version">英语学习王 v1.0.4</p>
+            
+            <div class="download-options">
+                <h3>📥 选择下载方式</h3>
+                
+                <!-- 主要下载链接 -->
+                <a href="EnglishStudyKing-v1.0.4.apk" class="download-btn" download>
+                    📱 直接下载 APK (推荐)
+                </a>
+                
+                <!-- GitHub下载链接 -->
+                <a href="https://github.com/Cge001/EnglishStudyKing/raw/main/EnglishStudyKing-v1.0.4.apk" class="download-btn secondary" target="_blank">
+                    🔗 GitHub 下载
+                </a>
+                
+                <!-- 备用下载 -->
+                <a href="https://github.com/Cge001/EnglishStudyKing" class="download-btn secondary" target="_blank">
+                    📂 访问 GitHub 仓库
+                </a>
+            </div>
+            
+            <div class="qr-section">
+                <h3>📱 手机扫码下载</h3>
+                <div class="qr-code">📱</div>
+                <p>用手机扫描二维码访问此页面</p>
+            </div>
+            
+            <div class="info">
+                <h3>📋 安装说明</h3>
+                <ul>
+                    <li><strong>系统要求：</strong>Android 5.0 (API 21) 及以上版本</li>
+                    <li><strong>文件大小：</strong>约 8.5MB</li>
+                    <li><strong>安装步骤：</strong></li>
+                    <ul>
+                        <li>1. 下载APK文件到手机</li>
+                        <li>2. 在文件管理器中找到下载的APK</li>
+                        <li>3. 点击APK文件开始安装</li>
+                        <li>4. 如果提示"未知来源"，请允许安装</li>
+                    </ul>
+                    <li><strong>注意事项：</strong>首次安装可能需要允许"未知来源"应用安装权限</li>
+                </ul>
+            </div>
+            
+            <a href="app_intro.html" class="back-link">← 返回应用介绍</a>
+        </div>
+    </div>
+</body>
+</html> 
