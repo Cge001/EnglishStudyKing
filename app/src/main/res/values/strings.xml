@@ -3,4 +3,6 @@
     <string name="input_hint">请输入文字</string>
     <string name="button_text">调用Native接口</string>
     <string name="result_placeholder">输出结果将显示在这里</string>
+    <string name="navigation_drawer_open">打开导航抽屉</string>
+    <string name="navigation_drawer_close">关闭导航抽屉</string>
 </resources> 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="首页" />
+        
+        <item
+            android:id="@+id/nav_english_learning"
+            android:icon="@drawable/ic_book"
+            android:title="英语学习" />
+        
+        <item
+            android:id="@+id/nav_native_interface"
+            android:icon="@drawable/ic_code"
+            android:title="Native接口" />
+    </group>
+
+    <item android:title="应用信息">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_info"
+                android:title="关于应用" />
+            
+            <item
+                android:id="@+id/nav_version"
+                android:icon="@drawable/ic_version"
+                android:title="版本信息" />
+            
+            <item
+                android:id="@+id/nav_features"
+                android:icon="@drawable/ic_features"
+                android:title="功能特性" />
+            
+            <item
+                android:id="@+id/nav_tech_stack"
+                android:icon="@drawable/ic_tech"
+                android:title="技术栈" />
+        </menu>
+    </item>
+
+    <item android:title="其他">
+        <menu>
+            <item
+                android:id="@+id/nav_github"
+                android:icon="@drawable/ic_github"
+                android:title="GitHub仓库" />
+            
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share"
+                android:title="分享应用" />
+        </menu>
+    </item>
+
+</menu> 
